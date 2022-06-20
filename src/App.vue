@@ -1,11 +1,12 @@
 <script setup>
-import { RouterLink, RouterView } from "vue-router";
+import { RouterView } from "vue-router";
+import DashboardPage from "./components/DashboardPage.vue";
 </script>
 
 <template>
   <header>
     <div class="wrapper">
-      <h1>Search and Save</h1>
+      <DashboardPage />
     </div>
   </header>
 
@@ -14,5 +15,4 @@ import { RouterLink, RouterView } from "vue-router";
 
 <style>
 @import "@/assets/base.css";
-
 </style>
