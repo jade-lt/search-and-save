@@ -68,8 +68,8 @@ export default {
   <div class="search-save-dashboard">
     <UtilityHeader />
     <div class="search-save-main">
-      <PropertyList title="Results" :properties="results" />
-      <PropertyList title="Saved Properties" :properties="saved" />
+      <PropertyList title="Results" type="result" :properties="results" />
+      <PropertyList title="Saved Properties" type="saved" :properties="saved" />
     </div>
   </div>
 </template>
@@ -80,5 +80,6 @@ export default {
   display: flex;
   flex: 1;
   justify-content: space-around;
+  margin: 32px 0;
 }
 </style>

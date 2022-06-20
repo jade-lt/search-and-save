@@ -1,15 +1,30 @@
-<script>
+<script setup>
 import UtilityText from "./UtilityText.vue";
+import UtilityButton from "../components/UtilityButton.vue";
+import AddIcon from "./icons/AddIcon.vue";
+import RemoveIcon from "./icons/RemoveIcon.vue";
+</script>
+<script>
 export default {
   props: {
     property: { type: Object, default: undefined },
+    type: { type: String, default: null },
   },
   components: { UtilityText },
+  data() {
+    return {
+      showActions: false,
+    };
+  },
 };
 </script>
 
 <template>
-  <div class="search-save-card">
+  <div
+    class="search-save-card"
+    @mouseover="showActions = true"
+    @mouseleave="showActions = false"
+  >
     <div
       class="card-header"
       :style="{
@@ -26,6 +41,15 @@ export default {
     />
     <div class="card-footer">
       <UtilityText heading size="m">{{ property.price }}</UtilityText>
+      <div class="card-actions">
+        <UtilityButton
+          v-if="showActions"
+          :label="type === 'result' ? 'Add' : 'Remove'"
+        >
+          <AddIcon v-if="type === 'result'" />
+          <RemoveIcon v-else />
+        </UtilityButton>
+      </div>
     </div>
   </div>
 </template>
@@ -35,7 +59,7 @@ export default {
 .search-save-card {
   width: 320px;
   height: 336px;
-  margin: 0 12px 32px 12px;
+  margin-bottom: 32px;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -58,5 +82,9 @@ export default {
   height: 32px;
   padding: 12px;
   background-color: var(--primary);
+}
+.card-actions {
+  display: flex;
+  justify-content: flex-end;
 }
 </style>
