@@ -1,22 +1,26 @@
 <script setup>
 import { RouterLink } from "vue-router";
 import UtilityText from "../components/UtilityText.vue";
+import UtilityButton from "../components/UtilityButton.vue";
 import HomeIcon from "./icons/HomeIcon.vue";
+import AboutIcon from "./icons/AboutIcon.vue";
 </script>
 
 <template>
   <div class="search-save-header">
-    <UtilityText>
+    <UtilityText heading size="xl" class="title">
       {{ "Search and Save" }}
     </UtilityText>
     <nav>
       <RouterLink to="/">
-        <HomeIcon />
+        <UtilityButton label="Home">
+          <HomeIcon />
+        </UtilityButton>
       </RouterLink>
       <RouterLink to="/about">
-        <UtilityText heading size="s">
-          {{ "About" }}
-        </UtilityText>
+        <UtilityButton label="About">
+          <AboutIcon />
+        </UtilityButton>
       </RouterLink>
     </nav>
   </div>
@@ -24,4 +28,12 @@ import HomeIcon from "./icons/HomeIcon.vue";
 
 <style>
 @import "@/assets/base.css";
+.title {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}
+nav {
+  display: flex;
+}
 </style>
