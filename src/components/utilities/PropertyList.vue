@@ -29,6 +29,7 @@ export default {
       <TransitionGroup name="list" tag="div">
         <PropertyCard
           v-for="property in properties"
+          ref="cards"
           :key="property.id"
           :property="property"
           :type="type"

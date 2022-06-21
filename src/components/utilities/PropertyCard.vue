@@ -12,7 +12,6 @@ export default {
     type: { type: String, default: null },
   },
   emits: ["action-clicked"],
-  components: { UtilityText },
   data() {
     return {
       showActions: false,
@@ -48,6 +47,7 @@ export default {
         <Transition>
           <UtilityButton
             v-if="showActions"
+            ref="action-button"
             :label="type === 'result' ? 'Add' : 'Remove'"
             @click="$emit('action-clicked')"
           >

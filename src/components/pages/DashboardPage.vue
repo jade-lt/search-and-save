@@ -93,12 +93,14 @@ export default {
     <UtilityHeader />
     <div class="search-save-main">
       <PropertyList
+        ref="results"
         title="Results"
         type="result"
         :properties="results"
         @add="add"
       />
       <PropertyList
+        ref="saved"
         title="Saved Properties"
         type="saved"
         :properties="saved"
