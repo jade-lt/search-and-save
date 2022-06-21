@@ -1,6 +1,6 @@
 <script setup>
 import UtilityText from "./UtilityText.vue";
-import PropertyCard from "../components/PropertyCard.vue";
+import PropertyCard from "./PropertyCard.vue";
 </script>
 
 <script>

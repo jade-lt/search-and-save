@@ -1,5 +1,5 @@
 <script setup>
-import UtilityText from "../components/UtilityText.vue";
+import UtilityText from "./UtilityText.vue";
 </script>
 
 <script>

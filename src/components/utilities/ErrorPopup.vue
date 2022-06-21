@@ -1,6 +1,6 @@
 <script setup>
 import UtilityText from "./UtilityText.vue";
-import CloseIcon from "./icons/CloseIcon.vue";
+import CloseIcon from "../icons/CloseIcon.vue";
 import UtilityButton from "./UtilityButton.vue";
 </script>
 

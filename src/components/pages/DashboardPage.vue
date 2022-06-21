@@ -1,7 +1,7 @@
 <script setup>
-import UtilityHeader from "../components/UtilityHeader.vue";
-import PropertyList from "../components/PropertyList.vue";
-import ErrorPopup from "../components/ErrorPopup.vue";
+import UtilityHeader from "../utilities/UtilityHeader.vue";
+import PropertyList from "../utilities/PropertyList.vue";
+import ErrorPopup from "../utilities/ErrorPopup.vue";
 </script>
 
 <script>

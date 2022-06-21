@@ -1,8 +1,8 @@
 <script setup>
 import UtilityText from "./UtilityText.vue";
-import UtilityButton from "../components/UtilityButton.vue";
-import AddIcon from "./icons/AddIcon.vue";
-import RemoveIcon from "./icons/RemoveIcon.vue";
+import UtilityButton from "./UtilityButton.vue";
+import AddIcon from "../icons/AddIcon.vue";
+import RemoveIcon from "../icons/RemoveIcon.vue";
 </script>
 
 <script>
