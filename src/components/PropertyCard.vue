@@ -4,6 +4,7 @@ import UtilityButton from "../components/UtilityButton.vue";
 import AddIcon from "./icons/AddIcon.vue";
 import RemoveIcon from "./icons/RemoveIcon.vue";
 </script>
+
 <script>
 export default {
   props: {
@@ -43,6 +44,7 @@ export default {
     <div class="card-footer">
       <UtilityText heading size="s">{{ property.price }}</UtilityText>
       <div class="card-actions">
+        <!-- conditionally render either an add or remove button -->
         <Transition>
           <UtilityButton
             v-if="showActions"

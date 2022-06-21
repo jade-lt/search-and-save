@@ -1,6 +1,7 @@
 <script setup>
 import UtilityText from "../components/UtilityText.vue";
 </script>
+
 <script>
 export default {
   props: {

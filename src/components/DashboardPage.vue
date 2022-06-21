@@ -8,6 +8,7 @@ import ErrorPopup from "../components/ErrorPopup.vue";
 export default {
   data() {
     return {
+      // mock backend data:
       results: [
         {
           price: "$726,500",
@@ -46,6 +47,7 @@ export default {
             "https://i4.au.reastatic.net/640x480/98cee1b2a3a64329921fc38f7e2926a78d41fcc683fc48fb8a8ef2999b14c027/main.jpg",
         },
       ],
+      // mock backend data:
       saved: [
         {
           price: "$526,500",
@@ -64,11 +66,13 @@ export default {
     };
   },
   mounted() {
+    // ensure the background colour of the property card header matches the logo background:
     this.results[0].agency.brandingColors.primary = "#00467f";
     this.saved[0].agency.brandingColors.primary = "#0ebab3";
   },
   methods: {
     add(property) {
+      // ensure there are no duplicate saved properties:
       const existing = this.saved.find((el) => el.id === property.id);
       if (existing) {
         this.showError = true;

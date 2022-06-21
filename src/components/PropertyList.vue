@@ -2,6 +2,7 @@
 import UtilityText from "./UtilityText.vue";
 import PropertyCard from "../components/PropertyCard.vue";
 </script>
+
 <script>
 export default {
   props: {
@@ -35,6 +36,7 @@ export default {
         />
       </TransitionGroup>
     </div>
+    <!-- show an empty state if there are no properties in the list -->
     <div v-else class="empty">
       <UtilityText size="s">
         {{
