@@ -25,4 +25,9 @@ import UtilityText from "../components/UtilityText.vue";
   align-items: center;
   padding: 64px;
 }
+@media only screen and (max-width: 600px) {
+  .search-save-header {
+    padding: 48px;
+  }
+}
 </style>

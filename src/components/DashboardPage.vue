@@ -117,4 +117,15 @@ export default {
   justify-content: space-around;
   margin: 0 48px;
 }
+@media only screen and (max-width: 600px) {
+  .search-save-main {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .search-save-main {
+    margin: 0;
+  }
+}
 </style>
