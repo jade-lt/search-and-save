@@ -1,6 +1,7 @@
 <script setup>
 import UtilityHeader from "../components/UtilityHeader.vue";
 import PropertyList from "../components/PropertyList.vue";
+import ErrorPopup from "../components/ErrorPopup.vue";
 </script>
 
 <script>
@@ -59,7 +60,22 @@ export default {
             "https://i2.au.reastatic.net/640x480/5e84d96722dda3ea2a084d6935677f64872d1d760562d530c3cabfcb7bcda9c2/main.jpg",
         },
       ],
+      showError: false,
     };
+  },
+  methods: {
+    add(property) {
+      const existing = this.saved.find((el) => el.id === property.id);
+      if (existing) {
+        this.showError = true;
+      } else {
+        this.saved.splice(this.saved.length, 0, property);
+      }
+    },
+    remove(property) {
+      const index = this.saved.findIndex((el) => el.id === property.id);
+      this.saved.splice(index, 1);
+    },
   },
 };
 </script>
@@ -68,10 +84,25 @@ export default {
   <div class="search-save-dashboard">
     <UtilityHeader />
     <div class="search-save-main">
-      <PropertyList title="Results" type="result" :properties="results" />
-      <PropertyList title="Saved Properties" type="saved" :properties="saved" />
+      <PropertyList
+        title="Results"
+        type="result"
+        :properties="results"
+        @add="add"
+      />
+      <PropertyList
+        title="Saved Properties"
+        type="saved"
+        :properties="saved"
+        @remove="remove"
+      />
     </div>
   </div>
+  <ErrorPopup
+    v-if="showError"
+    msg="You've already saved this property!"
+    @close="showError = false"
+  />
 </template>
 
 <style>

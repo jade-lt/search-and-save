@@ -9,6 +9,12 @@ export default {
     title: { type: String, default: null },
     type: { type: String, default: null },
   },
+  methods: {
+    handleClick(property) {
+      const event = this.type === "result" ? "add" : "remove";
+      this.$emit(event, property);
+    },
+  },
 };
 </script>
 
@@ -19,9 +25,10 @@ export default {
     </UtilityText>
     <PropertyCard
       v-for="property in properties"
-      :key="property"
+      :key="property.id"
       :property="property"
       :type="type"
+      @action-clicked="handleClick(property)"
     />
   </div>
 </template>

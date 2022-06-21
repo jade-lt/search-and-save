@@ -45,6 +45,7 @@ export default {
         <UtilityButton
           v-if="showActions"
           :label="type === 'result' ? 'Add' : 'Remove'"
+          @click="$emit('action-clicked')"
         >
           <AddIcon v-if="type === 'result'" />
           <RemoveIcon v-else />
