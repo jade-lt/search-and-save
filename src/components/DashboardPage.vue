@@ -63,6 +63,10 @@ export default {
       showError: false,
     };
   },
+  mounted() {
+    this.results[0].agency.brandingColors.primary = "#00467f";
+    this.saved[0].agency.brandingColors.primary = "#0ebab3";
+  },
   methods: {
     add(property) {
       const existing = this.saved.find((el) => el.id === property.id);
@@ -111,6 +115,6 @@ export default {
   display: flex;
   flex: 1;
   justify-content: space-around;
-  margin: 32px 0;
+  margin: 0 48px;
 }
 </style>

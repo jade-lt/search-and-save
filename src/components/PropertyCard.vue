@@ -10,6 +10,7 @@ export default {
     property: { type: Object, default: undefined },
     type: { type: String, default: null },
   },
+  emits: ["action-clicked"],
   components: { UtilityText },
   data() {
     return {
@@ -40,16 +41,18 @@ export default {
       }"
     />
     <div class="card-footer">
-      <UtilityText heading size="m">{{ property.price }}</UtilityText>
+      <UtilityText heading size="s">{{ property.price }}</UtilityText>
       <div class="card-actions">
-        <UtilityButton
-          v-if="showActions"
-          :label="type === 'result' ? 'Add' : 'Remove'"
-          @click="$emit('action-clicked')"
-        >
-          <AddIcon v-if="type === 'result'" />
-          <RemoveIcon v-else />
-        </UtilityButton>
+        <Transition>
+          <UtilityButton
+            v-if="showActions"
+            :label="type === 'result' ? 'Add' : 'Remove'"
+            @click="$emit('action-clicked')"
+          >
+            <AddIcon v-if="type === 'result'" />
+            <RemoveIcon v-else />
+          </UtilityButton>
+        </Transition>
       </div>
     </div>
   </div>
@@ -87,5 +90,14 @@ export default {
 .card-actions {
   display: flex;
   justify-content: flex-end;
+}
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
 }
 </style>

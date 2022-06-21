@@ -9,6 +9,7 @@ export default {
     title: { type: String, default: null },
     type: { type: String, default: null },
   },
+  emits: ["add", "remove"],
   methods: {
     handleClick(property) {
       const event = this.type === "result" ? "add" : "remove";
@@ -20,24 +21,57 @@ export default {
 
 <template>
   <div class="search-save-list">
-    <UtilityText class="list-title" heading size="m">
+    <UtilityText class="list-title" heading size="l">
       {{ title }}
     </UtilityText>
-    <PropertyCard
-      v-for="property in properties"
-      :key="property.id"
-      :property="property"
-      :type="type"
-      @action-clicked="handleClick(property)"
-    />
+    <div v-if="properties.length" class="properties">
+      <TransitionGroup name="list" tag="div">
+        <PropertyCard
+          v-for="property in properties"
+          :key="property.id"
+          :property="property"
+          :type="type"
+          @action-clicked="handleClick(property)"
+        />
+      </TransitionGroup>
+    </div>
+    <div v-else class="empty">
+      <UtilityText size="s">
+        {{
+          type === "result"
+            ? "Search results will appear here"
+            : "Your saved properties will appear here"
+        }}
+      </UtilityText>
+    </div>
   </div>
 </template>
 
 <style>
 @import "@/assets/base.css";
+.search-save-list {
+  min-width: 320px;
+}
 .list-title {
   display: flex;
   justify-content: center;
   margin-bottom: 32px;
+}
+.empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 336px;
+  border-radius: 8px;
+  box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
+}
+.list-enter-active,
+.list-leave-active {
+  transition: all 0.5s ease;
+}
+.list-enter-from,
+.list-leave-to {
+  opacity: 0;
+  transform: translateY(30px);
 }
 </style>

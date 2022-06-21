@@ -13,7 +13,7 @@ export default {
   <div class="search-save-button">
     <button type="button">
       <slot />
-      <UtilityText heading size="s">
+      <UtilityText v-if="label" heading size="s">
         {{ label }}
       </UtilityText>
     </button>
@@ -26,7 +26,14 @@ export default {
   display: flex;
   align-items: center;
   padding: 8px;
+  border: none;
   border-radius: 8px;
   cursor: pointer;
+  background-color: #54acfc;
+  color: #fff;
+  fill: #fff;
+}
+.search-save-text {
+  margin: 0 4px 0 8px;
 }
 </style>
