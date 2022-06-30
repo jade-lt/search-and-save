@@ -9,6 +9,10 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "@vue/cli": "^5.0.6",
+    "@vue/cli-service-global": "^4.5.19",
+    "axios": "^0.27.2",
+    "json-server": "^0.17.0",
     "vue": "^3.2.36"
   },
   "devDependencies": {
