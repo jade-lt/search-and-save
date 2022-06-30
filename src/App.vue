@@ -1,5 +1,4 @@
 <script setup>
-import { RouterView } from "vue-router";
 import DashboardPage from "./components/DashboardPage.vue";
 </script>
 
@@ -9,8 +8,6 @@ import DashboardPage from "./components/DashboardPage.vue";
       <DashboardPage />
     </div>
   </header>
-
-  <RouterView />
 </template>
 
 <style>
