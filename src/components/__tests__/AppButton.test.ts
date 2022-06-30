@@ -1,9 +1,9 @@
 import { it, expect } from "vitest";
 import { mount } from "@vue/test-utils";
-import UtilityButton from "../utilities/UtilityButton.vue";
+import AppButton from "../AppButton.vue";
 
 it('returns the correct label', () => {
-    const wrapper = mount(UtilityButton, {
+    const wrapper = mount(AppButton, {
         props: {
             label: "Remove"
         }

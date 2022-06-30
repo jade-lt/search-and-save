@@ -1,10 +1,10 @@
 import { describe, it, expect } from "vitest";
 import { mount } from "@vue/test-utils";
-import UtilityHeader from "../utilities/UtilityHeader.vue";
+import TheHeader from "../TheHeader.vue";
 
-describe("UtilityHeader", () => {
+describe("TheHeader", () => {
   it("renders properly", () => {
-    const wrapper = mount(UtilityHeader);
+    const wrapper = mount(TheHeader);
     expect(wrapper.text()).toContain("Search & Save");
   });
 });

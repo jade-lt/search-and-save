@@ -1,6 +1,6 @@
 import { it, expect } from "vitest";
 import { mount } from "@vue/test-utils";
-import PropertyCard from "../utilities/PropertyCard.vue";
+import PropertyCard from "../PropertyCard.vue";
 
 it('emits an event when clicked', () => {
     const wrapper = mount(PropertyCard, {

@@ -1,9 +1,9 @@
 import { it, expect } from "vitest";
 import { mount } from "@vue/test-utils";
-import UtilityText from "../utilities/UtilityText.vue";
+import AppText from "../AppText.vue";
 
 it('heading returns false', () => {
-    const wrapper = mount(UtilityText, {
+    const wrapper = mount(AppText, {
         props: {
             heading: true
         }

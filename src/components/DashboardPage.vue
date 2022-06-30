@@ -1,7 +1,7 @@
 <script setup>
-import UtilityHeader from "../utilities/UtilityHeader.vue";
-import PropertyList from "../utilities/PropertyList.vue";
-import ErrorPopup from "../utilities/ErrorPopup.vue";
+import TheHeader from "./TheHeader.vue";
+import PropertyList from "./PropertyList.vue";
+import AppPopup from "./AppPopup.vue";
 </script>
 
 <script>
@@ -90,7 +90,7 @@ export default {
 
 <template>
   <div class="search-save-dashboard">
-    <UtilityHeader />
+    <TheHeader />
     <div class="search-save-main">
       <PropertyList
         ref="results"
@@ -108,7 +108,7 @@ export default {
       />
     </div>
   </div>
-  <ErrorPopup
+  <AppPopup
     v-if="showError"
     msg="You've already saved this property!"
     @close="showError = false"

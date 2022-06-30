@@ -1,5 +1,5 @@
 <script setup>
-import UtilityText from "./UtilityText.vue";
+import AppText from "./AppText.vue";
 import PropertyCard from "./PropertyCard.vue";
 </script>
 
@@ -22,9 +22,9 @@ export default {
 
 <template>
   <div class="search-save-list">
-    <UtilityText class="list-title" heading size="l">
+    <AppText class="list-title" heading size="l">
       {{ title }}
-    </UtilityText>
+    </AppText>
     <div v-if="properties.length" class="properties">
       <TransitionGroup name="list" tag="div">
         <PropertyCard
@@ -39,13 +39,13 @@ export default {
     </div>
     <!-- show an empty state if there are no properties in the list -->
     <div v-else class="empty">
-      <UtilityText size="s">
+      <AppText size="s">
         {{
           type === "result"
             ? "Search results will appear here"
             : "Your saved properties will appear here"
         }}
-      </UtilityText>
+      </AppText>
     </div>
   </div>
 </template>

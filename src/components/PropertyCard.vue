@@ -1,8 +1,8 @@
 <script setup>
-import UtilityText from "./UtilityText.vue";
-import UtilityButton from "./UtilityButton.vue";
-import AddIcon from "../icons/AddIcon.vue";
-import RemoveIcon from "../icons/RemoveIcon.vue";
+import AppText from "./AppText.vue";
+import AppButton from "./AppButton.vue";
+import AddIcon from "./icons/AddIcon.vue";
+import RemoveIcon from "./icons/RemoveIcon.vue";
 </script>
 
 <script>
@@ -41,11 +41,11 @@ export default {
       }"
     />
     <div class="card-footer">
-      <UtilityText heading size="s">{{ property.price }}</UtilityText>
+      <AppText heading size="s">{{ property.price }}</AppText>
       <div class="card-actions">
         <!-- conditionally render either an add or remove button -->
         <Transition>
-          <UtilityButton
+          <AppButton
             v-if="showActions"
             ref="action-button"
             :label="type === 'result' ? 'Add' : 'Remove'"
@@ -53,7 +53,7 @@ export default {
           >
             <AddIcon v-if="type === 'result'" />
             <RemoveIcon v-else />
-          </UtilityButton>
+          </AppButton>
         </Transition>
       </div>
     </div>

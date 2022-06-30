@@ -1,6 +1,6 @@
 import { it, expect } from "vitest";
 import { mount } from "@vue/test-utils";
-import DashboardPage from "../pages/DashboardPage.vue";
+import DashboardPage from "../DashboardPage.vue";
 
 it('adds a new element to saved array when add event is captured', () => {
     const wrapper = mount(DashboardPage, {

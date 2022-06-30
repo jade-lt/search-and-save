@@ -1,5 +1,5 @@
 <script setup>
-import UtilityText from "./UtilityText.vue";
+import AppText from "./AppText.vue";
 </script>
 
 <template>
@@ -11,9 +11,9 @@ import UtilityText from "./UtilityText.vue";
       width="32"
       height="32"
     />
-    <UtilityText heading size="xl" class="title">
+    <AppText heading size="xl" class="title">
       {{ "Search & Save" }}
-    </UtilityText>
+    </AppText>
   </div>
 </template>
 

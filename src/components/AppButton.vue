@@ -1,5 +1,5 @@
 <script setup>
-import UtilityText from "./UtilityText.vue";
+import AppText from "./AppText.vue";
 </script>
 
 <script>
@@ -14,9 +14,9 @@ export default {
   <div class="search-save-button">
     <button type="button">
       <slot />
-      <UtilityText v-if="label" heading size="s">
+      <AppText v-if="label" heading size="s">
         {{ label }}
-      </UtilityText>
+      </AppText>
     </button>
   </div>
 </template>

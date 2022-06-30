@@ -1,6 +1,6 @@
 import { it, expect } from "vitest";
 import { mount } from "@vue/test-utils";
-import PropertyList from "../utilities/PropertyList.vue";
+import PropertyList from "../PropertyList.vue";
 
 it('correctly returns list title', () => {
     const wrapper = mount(PropertyList, {

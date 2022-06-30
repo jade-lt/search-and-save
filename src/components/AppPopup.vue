@@ -1,7 +1,7 @@
 <script setup>
-import UtilityText from "./UtilityText.vue";
-import CloseIcon from "../icons/CloseIcon.vue";
-import UtilityButton from "./UtilityButton.vue";
+import AppText from "./AppText.vue";
+import CloseIcon from "./icons/CloseIcon.vue";
+import AppButton from "./AppButton.vue";
 </script>
 
 <script>
@@ -18,14 +18,14 @@ export default {
   <div class="error-wrapper">
     <div class="error-container">
       <div class="error-header">
-        <UtilityButton @click="$emit('close')">
+        <AppButton @click="$emit('close')">
           <CloseIcon />
-        </UtilityButton>
+        </AppButton>
       </div>
       <div class="error-message">
-        <UtilityText heading size="m">
+        <AppText heading size="m">
           {{ msg }}
-        </UtilityText>
+        </AppText>
       </div>
     </div>
   </div>
