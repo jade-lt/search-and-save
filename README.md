@@ -6,13 +6,13 @@ Search & Save is a basic property listing UI that displays a list of results and
 
 Basic functionality allows the user to add a property from the results list into the saved list, and also remove a property from the saved list.
 
-A property can't be added more than once to the saved list and there is an empty state for both lists.
+A property can't be added more than once to the saved list, and there is an empty state for both lists.
 
 A few things to keep in mind:
 
-1. There is no search function to display the results
+1. There is currently no search function that displays the results
 
-2. This is purely a frontend app - all data is mock data that is hard coded into the dashboard component
+2. This is purely a frontend app - all data is mock data, served via [JSON Server](https://github.com/typicode/json-server)
 
 ***
 
@@ -37,13 +37,19 @@ A few things to keep in mind:
 npm install
 
 ```
-3.  Serve with hot reload
+3. Start the server (this will use port 4000, but can be changed to use an alternative port by adjusting the p flag if preferred)
+```sh
+
+json-server -p 4000 db.json
+
+```
+4. In another terminal, serve with hot reload
 ```sh
 
 npm run dev
 
 ```
-4. Search & Save will be available at  [http://localhost:3000](http://localhost:9009/)
+5. Search & Save will be available at [http://localhost:3000](http://localhost:9009/)
 
 ***
 
@@ -66,3 +72,5 @@ npm run test:unit
 ```sh
 
 npm run lint
+
+```
